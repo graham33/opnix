@@ -67,6 +67,7 @@ in {
         # Ensure output directory exists with correct permissions
         mkdir -p ${cfg.outputDir}
         chmod 750 ${cfg.outputDir}
+        chown root:${opnixGroup} ${cfg.outputDir}
 
         # Set up token file with correct group permissions if it exists
         if [ -f ${cfg.tokenFile} ]; then
